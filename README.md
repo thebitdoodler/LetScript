@@ -6,7 +6,7 @@
 
 
 ## Now For your PR you need to add any kind of relevant Scripts :
- If you are still confused then I can aslo give you few more IDEAS :
+ If you are still confused then I can also give you few more IDEAS :
  
   1) GitHub Repo Creation
   2) Insta Display Picture Shower
