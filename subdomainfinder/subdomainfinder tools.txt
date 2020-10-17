@@ -1,4 +1,4 @@
-Instalation of finddomain
+installation of finddomain
 Steps:
 1. wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
 2. chmod +x findomain-linux
