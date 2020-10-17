@@ -1,0 +1,2 @@
+Use this command to find subdomains
+findomain -t bugcrowd.com | httpx
