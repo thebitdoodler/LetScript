@@ -3,3 +3,9 @@ Steps:
 1. wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
 2. chmod +x findomain-linux
 3. ./findomain-linux
+
+installation of httpx
+Download latest binary from https://github.com/projectdiscovery/httpx/releases
+->	tar -xvf httpx-linux-amd64.tar
+->	mv httpx-linux-amd64 /usr/local/bin/httpx
+->	httpx -h
