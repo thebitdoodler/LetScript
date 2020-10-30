@@ -13,7 +13,6 @@ import sys
 user_input_url = sys.argv[1]
 wordlist = sys.argv[2]
 extension = sys.argv[3]
-Udir=sys.argv[4]
 
 def write(word):
     f1=open("write1.txt","a")
@@ -24,9 +23,9 @@ for i in range(2000):
     word = fo.readline(10).strip()
     surl = user_input_url+word+extension
     response = requests.get(surl)
-    if (response.status_code = 200):
+    if (response.status_code == 200):
         print ("[+] found :- ",surl)
-        write(word)
+    write(word)
     else:
         print ("[-] Not found :- ",surl)
         pass
