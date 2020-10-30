@@ -8,7 +8,6 @@ Created on Fri Oct 30 02:42:24 2020
 
 
 import requests
-import socket
 import sys
 user_input_url = sys.argv[1]
 wordlist = sys.argv[2]
@@ -25,7 +24,7 @@ for i in range(2000):
     response = requests.get(surl)
     if (response.status_code == 200):
         print ("[+] found :- ",surl)
-    write(word)
+        write(word)
     else:
         print ("[-] Not found :- ",surl)
         pass
