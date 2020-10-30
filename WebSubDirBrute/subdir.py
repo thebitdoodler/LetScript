@@ -26,5 +26,4 @@ for i in range(2000):
         print ("[+] found :- ",surl)
         write(word)
     else:
-        print ("[-] Not found :- ",surl)
-        pass
+        continue
