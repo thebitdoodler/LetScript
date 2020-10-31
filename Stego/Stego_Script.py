@@ -7,7 +7,7 @@ from __future__ import absolute_import, unicode_literals
 import argparse
 from steganography.steganography import Steganography
 
-parser=argparse.Argumentpoarser()
+parser=argparse.ArgumentParser()
 parser.add_argument("--carrier",help="To give path of carrier file which will contain the text.")
 parser.add_argument("--stego_text",help="To enter the text to hide.")
 parser.add_argument("--stego_find",help="To give path of image which contains hidden text.")
@@ -22,15 +22,15 @@ def hideText(carrier_path,secret_text):
 
 # Function for finding and detecting steganography
 def findText(steg_img):
-    secret_text=Stegonography.decode(steg_img)
-    print "Hidden text found :: "+secret_txt
+    secret_text=Steganography.decode(steg_img)
+    print "Hidden text found :: "+secret_text
 
 if args.carrier:
-    carriur_path=arg.carrier
+    carrier_path=args.carrier
     if args.stego_text:
         secret_text=args.stego_text
     hideText(carrier_path,secret_text)
 
-if args.stego_hide:
-    steg_img=args.stego_find
-    findText(steg_jpg)
+if args.stego_ind:
+    steg_img=args.stego_ind
+    findText(steg_igm)
