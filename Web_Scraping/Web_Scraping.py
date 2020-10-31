@@ -14,11 +14,11 @@ def create_webdriver():
  
  # Open the website
 browser = create_webdriver()
-browser.get("https://github.com/collectios/ML")
+browser.get("https://github.com/collections/machine-learning")
 
 
 # Extract all projects
-projects = browser.find_elements_byxpath("//h1[@class='h3 lh-condensed']")
+projects = browser.find_elements_by_xpath("//h1[@class='h3 lh-condensed']")
 
 
 # Extract information for each project
