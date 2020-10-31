@@ -31,6 +31,6 @@ if args.carrier:
         secret_text=args.stego_text
     hideText(carrier_path,secret_text)
 
-if args.stego_ind:
-    steg_img=args.stego_ind
-    findText(steg_igm)
+if args.stego_find:
+    steg_img=args.stego_find
+    findText(steg_img)
