@@ -9,12 +9,12 @@ driver_option = webdriver.ChromeOptions()
 driver_option.add_argument(" — incognito")
 chromedriver_path = '/Users/woratana/Downloads/chromedriver' # Change this to your own chromedriver path!
 def create_webdriver():
-return webdriver.Chrome(executable_path=chromedriver_path, chrome_options=driver_option)
+ return webdriver.Chrome(executable_path=chromedriver_path, chrome_options=driver_option)
  
  
  # Open the website
 browser = create_webdriver()
-browser.get("https://github.com/collectionsmachine-learning")
+browser.get("https://github.com/collections/machine-learning")
 
 
 # Extract all projects
@@ -24,9 +24,9 @@ projects = browser.find_elements_by_xpath("//h1[@class='h3 lh-condensed']")
 # Extract information for each project
 project_list = {}
 for proj in projects:
- proj_name = projj.text # Project name
+ proj_name = proj.text # Project name
  proj_url = proj.find_elements_by_xpath("a")[0].get_attribute('href') # Project URL
- project_list[projname] = proj_url
+ project_list[proj_name] = proj_url
  
  
  # Close connection
@@ -39,9 +39,9 @@ project_df = pd.DataFrame.from_dict(project_list, orient = 'index')
 
 # Manipulate the table
 project_df['project_name'] = project_df.index
-project_df.column = ['project_url', 'project_name']
+project_df.columns = ['project_url', 'project_name']
 project_df = project_df.reset_index(drop=True)
 
 # Export project dataframe to CSV
-project_f.to_csv('project_list.csv')
+project_df.to_csv('project_list.csv')
 	
