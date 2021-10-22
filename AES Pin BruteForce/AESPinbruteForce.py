@@ -1,5 +1,5 @@
 import base64
-from Crypto.Cipher import AES
+import AES
 from Crypto.Hash import MD5
 import re
 
