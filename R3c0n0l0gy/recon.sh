@@ -1,10 +1,16 @@
 #/bin/bash
 
-# Fetching domains from crt.sh
+
 _target=$1
 
 echo "$_target"
-curl "https://crt.sh/?q=$_target&output=json" | jq ".[].name_value" | sed 's/\"//g' | sed 's/\*\.//g' | sort -u 
 
-#naabu -host $_target  -o /$_target_naabuScan.txt
+assetfinder --subs-only $_target | anew subdomains.txt
+
+#curl "https://crt.sh/?q=$_target&output=json" | jq ".[].name_value" | sed 's/\"//g' | sed 's/\*\.//g' | sort -u > subdomains.txt
+
+#performing port scanning via naabu
+naabu -list subdomains.txt -o /tmp/naabu.txt
+
+
 
