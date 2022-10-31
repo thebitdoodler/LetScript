@@ -1,21 +1,22 @@
 #/bin/bash
 
+
 _target=$1
 
 #echo "$_target"
 
-# Making target directory
+# Finding alive sub-domains
  
 mkdir -p $_target
 
-# Shifting to the target directory
 cd $_target
 
-assetfinder --subs-only $_target | httpx | anew subdomains.txt
+assetfinder --subs-only $_target | httpx | anew $_target_subdomains.txt
 
-
-# Performing a curl lookup onto crt.sh domain to fetch JSON body of sub-domains for given domains
-curl "https://crt.sh/?q=$_target&output=json" | jq ".[].name_value" | sed 's/\"//g' | sed 's/\*\.//g' | sort -u > subdomains.txt
+curl "https://crt.sh/?q=$_target&output=json" | jq ".[].name_value" | sed 's/\"//g' | sed 's/\*\.//g' | sort -u > $_target_subdomains_crtsh.txt
 
 #performing port scanning via naabu
 naabu -list subdomains.txt -o /tmp/naabu.txt
+
+# Performing a nuclei vulnerability scan for initial recon and low-hanging bugs check
+nuclei -l $_target_subdomains.txt -t ~/nuclei-template
